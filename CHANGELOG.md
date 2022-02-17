@@ -3,8 +3,12 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 The major and minor version numbers of this repository (but not patch numbers) match the version numbers of the
-[`json-kotlin-schema-codegen`](https://github.com/pwall567/json-kotlin-schema-codegen) library used by this Gradle
+[`json-kotlin-schema-codegen`](https://github.com/prakharr/json-kotlin-schema-codegen) library used by this Gradle
 plugin.
+
+## [0.68.1] - 2022-02-17
+### Changed
+- `pom.xml`: Changed the `json-kotlin-schema` and `json-kotlin-schema-codegen` dependency locations to point to self-managed versions
 
 ## [0.68] - 2022-01-20
 ### Changed
