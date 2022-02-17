@@ -6,12 +6,12 @@
 
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-group = "net.pwall.json"
+group = "io.github.prakharr"
 version = "0.68"
 description = "Gradle Code Generation Plugin for JSON Schema"
 
 val displayName = "JSON Schema Code Generation Plugin"
-val projectURL = "https://github.com/pwall567/${project.name}"
+val projectURL = "https://github.com/prakharr/${project.name}"
 
 plugins {
     kotlin("jvm") version("1.5.20")
@@ -92,7 +92,7 @@ publishing {
                     description.set(project.description)
                     packaging = "jar"
                     scm {
-                        connection.set("scm:git:git://github.com/pwall567/${project.name}.git")
+                        connection.set("scm:git:git://github.com/prakharr/${project.name}.git")
                         url.set(projectURL)
                     }
                     licenses {
@@ -102,6 +102,14 @@ publishing {
                         }
                     }
                     developers {
+                        developer {
+                            id.set("pr_revent@hotmail.com")
+                            name.set("Prakhar Rathi")
+                            email.set("pr_revent@hotmail.com")
+                            url.set("https://prakharrathi.com")
+                            roles.set(setOf("lead", "developer"))
+                            timezone.set("Asia/Singapore")
+                        }
                         developer {
                             id.set("pwall@pwall.net")
                             name.set("Peter Wall")
@@ -120,6 +128,7 @@ publishing {
 nexusPublishing {
     repositories {
         sonatype {
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
             username.set(project.findProperty("ossrhUsername").toString())
             password.set(project.findProperty("ossrhPassword").toString())
         }
