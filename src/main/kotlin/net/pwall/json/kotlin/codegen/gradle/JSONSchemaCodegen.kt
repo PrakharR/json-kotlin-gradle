@@ -31,6 +31,9 @@ import org.gradle.api.Action
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.property
 
+import net.pwall.json.kotlin.codegen.gradle.annotation.ClassAnnotation
+import net.pwall.json.kotlin.codegen.gradle.annotation.ClassAnnotationContainer
+import net.pwall.json.kotlin.codegen.gradle.annotation.ClassAnnotationContainerImpl
 import net.pwall.json.kotlin.codegen.gradle.extension.SchemaExtension
 import net.pwall.json.kotlin.codegen.gradle.extension.SchemaExtensionContainer
 import net.pwall.json.kotlin.codegen.gradle.extension.SchemaExtensionContainerImpl
@@ -38,6 +41,7 @@ import net.pwall.json.kotlin.codegen.gradle.mapping.ClassMapping
 import net.pwall.json.kotlin.codegen.gradle.mapping.ClassMappingContainer
 import net.pwall.json.kotlin.codegen.gradle.mapping.ClassMappingContainerImpl
 import org.gradle.kotlin.dsl.listProperty
+import org.gradle.kotlin.dsl.polymorphicDomainObjectContainer
 
 @Suppress("UnstableApiUsage")
 open class JSONSchemaCodegen(project: Project) {
@@ -66,11 +70,17 @@ open class JSONSchemaCodegen(project: Project) {
     val schemaExtensions: SchemaExtensionContainer = SchemaExtensionContainerImpl(project,
             project.objects.polymorphicDomainObjectContainer(SchemaExtension::class.java))
 
+    val classAnnotations: ClassAnnotationContainer = ClassAnnotationContainerImpl(project,
+            project.objects.polymorphicDomainObjectContainer(ClassAnnotation::class.java))
+
     @Suppress("unused")
     fun classMappings(action: Action<in ClassMappingContainer>) = action.execute(classMappings)
 
     @Suppress("unused")
     fun schemaExtensions(action: Action<in SchemaExtensionContainer>) = action.execute(schemaExtensions)
+
+    @Suppress("unused")
+    fun classAnnotations(action: Action<in ClassAnnotationContainer>) = action.execute(classAnnotations)
 
     companion object {
         internal const val NAME = "jsonSchemaCodegen"
