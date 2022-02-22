@@ -7,6 +7,6 @@ import javax.inject.Inject
 class ClassAnnotationAdd @Inject constructor(name: String, project: Project) : ClassAnnotation(name, project) {
 
     override fun applyTo(codeGenerator: CodeGenerator) {
-        codeGenerator.addClassAnnotation(classAnnotation.get())
+        codeGenerator.addClassAnnotation(classId)
     }
 }
