@@ -7,7 +7,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "io.github.prakharr"
-version = "0.68.3"
+version = "0.68.4"
 description = "Gradle Code Generation Plugin for JSON Schema"
 
 val displayName = "JSON Schema Code Generation Plugin"
@@ -68,8 +68,8 @@ tasks {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation(kotlin("gradle-plugin-api"))
-    implementation("io.github.prakharr:json-kotlin-schema:0.31.1")
-    implementation("io.github.prakharr:json-kotlin-schema-codegen:0.68.3")
+    implementation("io.github.prakharr:json-kotlin-schema:0.31.2")
+    implementation("io.github.prakharr:json-kotlin-schema-codegen:0.68.4")
     implementation("net.pwall.json:jsonutil:5.0")
     implementation("net.pwall.json:json-pointer:2.2")
     testImplementation(kotlin("test"))
