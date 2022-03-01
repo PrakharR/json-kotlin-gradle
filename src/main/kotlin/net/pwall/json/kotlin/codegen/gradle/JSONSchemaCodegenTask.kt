@@ -74,6 +74,9 @@ open class JSONSchemaCodegenTask : DefaultTask() {
             ext.classAnnotations.forEach {
                 it.applyTo(this)
             }
+            ext.fileAnnotations.forEach {
+                it.applyTo(this)
+            }
             ext.generatorComment.orNull?.let { generatorComment = it }
             val inputFile = ext.inputFile.orNull ?: File("src/main/resources/schema")
             val include = ext.include.orNull ?: emptyList()
